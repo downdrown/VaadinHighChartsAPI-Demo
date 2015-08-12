@@ -1,36 +1,28 @@
-// Global variable overrides. Must be declared before importing Valo.
-
-// Defines the plaintext font size, weight and family. Font size affects general component sizing.
-//$v-font-size: 16px;
-//$v-font-weight: 300;
-//$v-font-family: "Open Sans", sans-serif;
-
-// Defines the border used by all components.
-//$v-border: 1px solid (v-shade 0.7);
-//$v-border-radius: 4px;
-
-// Affects the color of some component elements, e.g Button, Panel title, etc
-//$v-background-color: hsl(210, 0%, 98%);
-// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
-//$v-app-background-color: $v-background-color;
-
-// Affects the visual appearance of all components
-//$v-gradient: v-linear 8%;
-//$v-bevel-depth: 30%;
-//$v-shadow-opacity: 5%;
-
-// Defines colors for indicating status (focus, success, failure)
-//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
-//$v-friendly-color: #2c9720;
-//$v-error-indicator-color: #ed473b;
-
-// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
-// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+$v-app-loading-text: "Dark Valo";
+$v-background-color: #444d50;
+$v-focus-color: #07a9ca;
+$v-focus-style: 0 0 3px 2px $v-focus-color;
+$v-bevel-depth: 40%;
+$v-gradient: v-linear 12%;
+$v-border-radius: 10px;
+$v-font-family: Roboto, sans-serif;
+$v-font-weight: 400;
+$v-font-weight--header: 400;
+$v-bevel: inset 0 1px 2px v-tint, inset 0 0 1px (v-tint 0.1);
+$v-shadow: 0 0 0 3px rgba(0,0,0,0.32), 0 1px 0 3px rgba(255,255,255,0.14);
+$v-textfield-bevel: inset 0 2px 2px v-shade;
+$v-textfield-shadow: $v-shadow;
+$v-unit-size: 40px;
+$v-overlay-shadow: 0 0 0 3px (v-shade 8), 0 5px 10px (v-shade 4);
+$v-component-group-spacing: 6px;
 
 @import "../valo/valo.scss";
 
 @mixin mytheme {
   @include valo;
 
-  // Insert your own theme rules here
+  .v-verticallayout-view {
+    background-color: ghostwhite;
+  }
+
 }

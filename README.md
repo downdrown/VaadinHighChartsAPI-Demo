@@ -19,5 +19,8 @@ You can use these code samples to understand the usage of my AddOn.
 
 You can clone this project and simply run it by:
 
+`git clone https://github.com/downdrown/VaadinHighChartsAPI-Demo.git`
+
 `cd VaadinHighChartsAPI-Demo`
+
 `mvn jetty:run`
