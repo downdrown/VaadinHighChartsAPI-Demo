@@ -2,6 +2,7 @@ package at.downdrown.vaadinaddons.demoui;
 
 import at.downdrown.vaadinaddons.demoui.views.Views;
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
 import com.vaadin.server.ThemeResource;
@@ -13,6 +14,7 @@ import com.vaadin.ui.themes.ValoTheme;
 import javax.servlet.annotation.WebServlet;
 
 @Theme("mytheme")
+@Title("Vaadin HighChartsAPI Demo App")
 @Widgetset("at.downdrown.vaadinaddons.MyAppWidgetset")
 public class DemoUI extends UI {
 
@@ -31,7 +33,7 @@ public class DemoUI extends UI {
         screeen.setSizeFull();
         screeen.setExpandRatio(viewScreen, 0.8f);
 
-        //Navigator instanziieren.
+        //Instantiate navigator
         navigator = new BaseNavigator(this, viewScreen);
         this.setNavigator(navigator);
         navigator.navigateTo(Views.DASHBOARD);
