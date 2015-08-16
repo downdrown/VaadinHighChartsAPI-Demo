@@ -141,6 +141,7 @@ public class Dashboard extends VerticalLayout implements View {
         barConfiguration.removeBackgroundLines();
         barConfiguration.setChartType(ChartType.BAR);
         barConfiguration.setChartMargin(new Margin(50, 20, 160, 60));
+        barConfiguration.setLegendEnabled(false);
 
         BarChartPlotOptions barChartPlotOptions = new BarChartPlotOptions();
         barChartPlotOptions.setDataLabelsFontColor(Colors.LIGHTGRAY);
@@ -179,6 +180,7 @@ public class Dashboard extends VerticalLayout implements View {
         columnConfiguration.removeBackgroundLines();
         columnConfiguration.setChartType(ChartType.COLUMN);
         columnConfiguration.setChartMargin(new Margin(10, 30, 140, 70));
+        columnConfiguration.setLegendEnabled(false);
 
         ColumnChartPlotOptions columnChartPlotOptions = new ColumnChartPlotOptions();
         columnChartPlotOptions.setDataLabelsFontColor(Colors.LIGHTGRAY);
