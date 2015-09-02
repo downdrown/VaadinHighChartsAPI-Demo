@@ -6,6 +6,8 @@ import at.downdrown.vaadinaddons.highchartsapi.HighChartFactory;
 import at.downdrown.vaadinaddons.highchartsapi.exceptions.HighChartsException;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartConfiguration;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartType;
+import at.downdrown.vaadinaddons.highchartsapi.model.data.HighChartsData;
+import at.downdrown.vaadinaddons.highchartsapi.model.data.base.DoubleData;
 import at.downdrown.vaadinaddons.highchartsapi.model.series.LineChartSeries;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
@@ -30,17 +32,17 @@ public class LineChartExamples extends VerticalLayout implements View {
         lineConfiguration.setTitle("Fruit vs Sweets sells");
         lineConfiguration.setChartType(ChartType.LINE);
 
-        List<Object> bananaValues = new ArrayList<Object>();
-        bananaValues.add(11.3);
-        bananaValues.add(25.1);
-        bananaValues.add(32.7);
+        List<HighChartsData> bananaValues = new ArrayList<>();
+        bananaValues.add(new DoubleData(11.3));
+        bananaValues.add(new DoubleData(25.1));
+        bananaValues.add(new DoubleData(32.7));
 
         LineChartSeries bananaLine = new LineChartSeries("Bananas", bananaValues);
 
-        List<Object> sweetValues = new ArrayList<Object>();
-        sweetValues.add(33.65);
-        sweetValues.add(63.24);
-        sweetValues.add(21.52);
+        List<HighChartsData> sweetValues = new ArrayList<>();
+        sweetValues.add(new DoubleData(33.65));
+        sweetValues.add(new DoubleData(63.24));
+        sweetValues.add(new DoubleData(21.52));
 
         LineChartSeries choclateLine = new LineChartSeries("Choclate", sweetValues);
 

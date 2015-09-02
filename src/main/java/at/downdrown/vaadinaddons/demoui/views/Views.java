@@ -8,7 +8,7 @@ public enum Views {
     BARCHARTEXAMPLES(BarChartExamples.class),
     COLUMNCHARTEXAMPLES(ColumnChartExamples.class);
 
-    private final Class view;
+private final Class view;
 
     Views(Class view) {
         this.view = view;

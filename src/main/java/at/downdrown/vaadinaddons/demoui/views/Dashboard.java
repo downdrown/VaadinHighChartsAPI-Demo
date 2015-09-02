@@ -8,7 +8,9 @@ import at.downdrown.vaadinaddons.highchartsapi.exceptions.HighChartsException;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartConfiguration;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartType;
 import at.downdrown.vaadinaddons.highchartsapi.model.Margin;
+import at.downdrown.vaadinaddons.highchartsapi.model.data.HighChartsData;
 import at.downdrown.vaadinaddons.highchartsapi.model.data.PieChartData;
+import at.downdrown.vaadinaddons.highchartsapi.model.data.base.DoubleData;
 import at.downdrown.vaadinaddons.highchartsapi.model.plotoptions.BarChartPlotOptions;
 import at.downdrown.vaadinaddons.highchartsapi.model.plotoptions.ColumnChartPlotOptions;
 import at.downdrown.vaadinaddons.highchartsapi.model.plotoptions.LineChartPlotOptions;
@@ -109,17 +111,17 @@ public class Dashboard extends VerticalLayout implements View {
 
         lineConfiguration.setPlotOptions(lineChartPlotOptions);
 
-        List<Object> bananaValues = new ArrayList<Object>();
-        bananaValues.add(11.3);
-        bananaValues.add(25.1);
-        bananaValues.add(32.7);
+        List<HighChartsData> bananaValues = new ArrayList<>();
+        bananaValues.add(new DoubleData(11.3));
+        bananaValues.add(new DoubleData(25.1));
+        bananaValues.add(new DoubleData(32.7));
 
         LineChartSeries bananaLine = new LineChartSeries("Bananas", bananaValues);
 
-        List<Object> sweetValues = new ArrayList<Object>();
-        sweetValues.add(33.65);
-        sweetValues.add(63.24);
-        sweetValues.add(21.52);
+        List<HighChartsData> sweetValues = new ArrayList<>();
+        sweetValues.add(new DoubleData(33.65));
+        sweetValues.add(new DoubleData(63.24));
+        sweetValues.add(new DoubleData(21.52));
 
         LineChartSeries choclateLine = new LineChartSeries("Choclate", sweetValues);
 
@@ -148,17 +150,17 @@ public class Dashboard extends VerticalLayout implements View {
 
         barConfiguration.setPlotOptions(barChartPlotOptions);
 
-        List<Object> bananaBarValues = new ArrayList<Object>();
-        bananaBarValues.add(11.3);
-        bananaBarValues.add(25.1);
-        bananaBarValues.add(32.7);
+        List<HighChartsData> bananaBarValues = new ArrayList<>();
+        bananaBarValues.add(new DoubleData(11.3));
+        bananaBarValues.add(new DoubleData(25.1));
+        bananaBarValues.add(new DoubleData(32.7));
 
         BarChartSeries bananaBar = new BarChartSeries("Bananas", bananaBarValues);
 
-        List<Object> sweetBarValues = new ArrayList<Object>();
-        sweetBarValues.add(33.65);
-        sweetBarValues.add(63.24);
-        sweetBarValues.add(21.52);
+        List<HighChartsData> sweetBarValues = new ArrayList<>();
+        sweetBarValues.add(new DoubleData(33.65));
+        sweetBarValues.add(new DoubleData(63.24));
+        sweetBarValues.add(new DoubleData(21.52));
 
         BarChartSeries choclateBar = new BarChartSeries("Choclate", sweetBarValues);
 
@@ -187,19 +189,17 @@ public class Dashboard extends VerticalLayout implements View {
 
         columnConfiguration.setPlotOptions(columnChartPlotOptions);
 
-        List<Object> bananaColumnValues = new ArrayList<Object>();
-        bananaColumnValues.add(11.3);
-        bananaColumnValues.add(15.1);
-        bananaColumnValues.add(25.1);
-        bananaColumnValues.add(32.7);
+        List<HighChartsData> bananaColumnValues = new ArrayList<>();
+        bananaColumnValues.add(new DoubleData(11.3));
+        bananaColumnValues.add(new DoubleData(25.1));
+        bananaColumnValues.add(new DoubleData(32.7));
 
         ColumnChartSeries bananaColumn = new ColumnChartSeries("Bananas", bananaColumnValues);
 
-        List<Object> sweetColumnValues = new ArrayList<Object>();
-        sweetColumnValues.add(33.65);
-        sweetColumnValues.add(63.24);
-        sweetColumnValues.add(21.52);
-        sweetColumnValues.add(11.22);
+        List<HighChartsData> sweetColumnValues = new ArrayList<>();
+        sweetColumnValues.add(new DoubleData(33.65));
+        sweetColumnValues.add(new DoubleData(63.24));
+        sweetColumnValues.add(new DoubleData(21.52));
 
         ColumnChartSeries choclateColumn = new ColumnChartSeries("Choclate", sweetColumnValues);
 

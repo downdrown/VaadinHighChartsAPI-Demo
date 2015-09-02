@@ -20,36 +20,36 @@ public class DemoUI extends UI {
 
     private BaseNavigator navigator;
 
-    @Override
-    protected void init(VaadinRequest vaadinRequest) {
+        @Override
+        protected void init(VaadinRequest vaadinRequest) {
 
-        final VerticalLayout menuBar = new VerticalLayout();
-        menuBar.setWidth(250, Unit.PIXELS);
-        menuBar.setHeight(100, Unit.PERCENTAGE);
-        final VerticalLayout viewScreen = new VerticalLayout();
-        viewScreen.setSizeFull();
-        final HorizontalLayout screeen = new HorizontalLayout(menuBar, viewScreen);
+            final VerticalLayout menuBar = new VerticalLayout();
+            menuBar.setWidth(250, Unit.PIXELS);
+            menuBar.setHeight(100, Unit.PERCENTAGE);
+            final VerticalLayout viewScreen = new VerticalLayout();
+            viewScreen.setSizeFull();
+            final HorizontalLayout screeen = new HorizontalLayout(menuBar, viewScreen);
 
-        screeen.setSizeFull();
-        screeen.setExpandRatio(viewScreen, 0.8f);
+            screeen.setSizeFull();
+            screeen.setExpandRatio(viewScreen, 0.8f);
 
-        //Instantiate navigator
-        navigator = new BaseNavigator(this, viewScreen);
-        this.setNavigator(navigator);
-        navigator.navigateTo(Views.DASHBOARD);
+            //Instantiate navigator
+            navigator = new BaseNavigator(this, viewScreen);
+            this.setNavigator(navigator);
+            navigator.navigateTo(Views.DASHBOARD);
 
-        final Panel navigation = new Panel("Vaadin HighCharts API Demo");
-        navigation.setStyleName(ValoTheme.PANEL_BORDERLESS);
-        navigation.setSizeFull();
-        navigation.setIcon(new ThemeResource("resources/images/highcharts-api-icon-small.png"));
+            final Panel navigation = new Panel("Vaadin HighCharts API Demo");
+            navigation.setStyleName(ValoTheme.PANEL_BORDERLESS);
+            navigation.setSizeFull();
+            navigation.setIcon(new ThemeResource("resources/images/highcharts-api-icon-small.png"));
 
-        Button pieChartExamples = new Button("Pie Chart");
-        pieChartExamples.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
-        pieChartExamples.setWidth(100, Unit.PERCENTAGE);
-        pieChartExamples.addClickListener(new Button.ClickListener() {
-            @Override
-            public void buttonClick(Button.ClickEvent clickEvent) {
-                navigator.navigateTo(Views.PIECHARTEXAMPLES);
+            Button pieChartExamples = new Button("Pie Chart");
+            pieChartExamples.setStyleName(ValoTheme.BUTTON_BORDERLESS_COLORED);
+            pieChartExamples.setWidth(100, Unit.PERCENTAGE);
+            pieChartExamples.addClickListener(new Button.ClickListener() {
+                @Override
+                public void buttonClick(Button.ClickEvent clickEvent) {
+                    navigator.navigateTo(Views.PIECHARTEXAMPLES);
             }
         });
 

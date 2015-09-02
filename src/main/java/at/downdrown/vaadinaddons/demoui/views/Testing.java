@@ -7,8 +7,8 @@ import at.downdrown.vaadinaddons.highchartsapi.exceptions.HighChartsException;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartConfiguration;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartType;
 import at.downdrown.vaadinaddons.highchartsapi.model.data.HighChartsData;
-import at.downdrown.vaadinaddons.highchartsapi.model.data.base.DoubleData;
-import at.downdrown.vaadinaddons.highchartsapi.model.series.BarChartSeries;
+import at.downdrown.vaadinaddons.highchartsapi.model.data.base.StringDoubleData;
+import at.downdrown.vaadinaddons.highchartsapi.model.series.AreaSplineChartSeries;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Alignment;
@@ -20,7 +20,7 @@ import com.vaadin.ui.themes.ValoTheme;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BarChartExamples extends VerticalLayout implements View {
+public class Testing extends VerticalLayout implements View {
 
     @Override
     public void enter(ViewChangeListener.ViewChangeEvent viewChangeEvent) {
@@ -28,29 +28,20 @@ public class BarChartExamples extends VerticalLayout implements View {
         this.setSizeFull();
         this.setStyleName("view");
 
-        ChartConfiguration barConfiguration = new ChartConfiguration();
-        barConfiguration.setTitle("Fruit vs Sweets sells");
-        barConfiguration.setChartType(ChartType.BAR);
+        ChartConfiguration areaSplineConfiguration = new ChartConfiguration();
+        areaSplineConfiguration.setTitle("Fruit vs Sweets sells");
+        areaSplineConfiguration.setChartType(ChartType.AREASPLINE);
 
-        List<HighChartsData> bananaBarValues = new ArrayList<>();
-        bananaBarValues.add(new DoubleData(11.3));
-        bananaBarValues.add(new DoubleData(25.1));
-        bananaBarValues.add(new DoubleData(32.7));
+        List<HighChartsData> areaSplineValues = new ArrayList<>();
+        areaSplineValues.add(new StringDoubleData("test 1", 22.3));
+        areaSplineValues.add(new StringDoubleData("test 2", 51.4));
+        areaSplineValues.add(new StringDoubleData("test 3", 234.92));
 
-        BarChartSeries bananaBar = new BarChartSeries("Bananas", bananaBarValues);
-
-        List<HighChartsData> sweetBarValues = new ArrayList<>();
-        sweetBarValues.add(new DoubleData(33.65));
-        sweetBarValues.add(new DoubleData(63.24));
-        sweetBarValues.add(new DoubleData(21.52));
-
-        BarChartSeries choclateBar = new BarChartSeries("Choclate", sweetBarValues);
-
-        barConfiguration.getSeriesList().add(bananaBar);
-        barConfiguration.getSeriesList().add(choclateBar);
+        AreaSplineChartSeries values = new AreaSplineChartSeries("Values", areaSplineValues);
+        areaSplineConfiguration.getSeriesList().add(values);
 
         try {
-            HighChart barChart = HighChartFactory.renderChart(barConfiguration);
+            HighChart barChart = HighChartFactory.renderChart(areaSplineConfiguration);
             barChart.setHeight(60, Unit.PERCENTAGE);
             barChart.setWidth(90, Unit.PERCENTAGE);
             this.addComponent(barChart);

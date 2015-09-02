@@ -6,6 +6,9 @@ import at.downdrown.vaadinaddons.highchartsapi.HighChartFactory;
 import at.downdrown.vaadinaddons.highchartsapi.exceptions.HighChartsException;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartConfiguration;
 import at.downdrown.vaadinaddons.highchartsapi.model.ChartType;
+import at.downdrown.vaadinaddons.highchartsapi.model.data.HighChartsData;
+import at.downdrown.vaadinaddons.highchartsapi.model.data.base.DoubleData;
+import at.downdrown.vaadinaddons.highchartsapi.model.plotoptions.ColumnChartPlotOptions;
 import at.downdrown.vaadinaddons.highchartsapi.model.series.ColumnChartSeries;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
@@ -30,17 +33,20 @@ public class ColumnChartExamples extends VerticalLayout implements View {
         columnConfiguration.setTitle("Fruit vs Sweets sells");
         columnConfiguration.setChartType(ChartType.COLUMN);
 
-        List<Object> bananaColumnValues = new ArrayList<Object>();
-        bananaColumnValues.add(11.3);
-        bananaColumnValues.add(25.1);
-        bananaColumnValues.add(32.7);
+        ColumnChartPlotOptions columnPlotOptions = new ColumnChartPlotOptions();
+        columnConfiguration.setPlotOptions(columnPlotOptions);
+
+        List<HighChartsData> bananaColumnValues = new ArrayList<>();
+        bananaColumnValues.add(new DoubleData(11.3));
+        bananaColumnValues.add(new DoubleData(25.1));
+        bananaColumnValues.add(new DoubleData(32.7));
 
         ColumnChartSeries bananaColumn = new ColumnChartSeries("Bananas", bananaColumnValues);
 
-        List<Object> sweetColumnValues = new ArrayList<Object>();
-        sweetColumnValues.add(33.65);
-        sweetColumnValues.add(63.24);
-        sweetColumnValues.add(21.52);
+        List<HighChartsData> sweetColumnValues = new ArrayList<>();
+        sweetColumnValues.add(new DoubleData(33.65));
+        sweetColumnValues.add(new DoubleData(63.24));
+        sweetColumnValues.add(new DoubleData(21.52));
 
         ColumnChartSeries choclateColumn = new ColumnChartSeries("Choclate", sweetColumnValues);
 
@@ -67,17 +73,17 @@ public class ColumnChartExamples extends VerticalLayout implements View {
                 "columnConfiguration.setTitle(\"Fruit vs Sweets sells\");\n" +
                 "columnConfiguration.setChartType(ChartType.COLUMN);\n" +
                 "\n" +
-                "List<Object> bananaColumnValues = new ArrayList<Object>();\n" +
-                "bananaColumnValues.add(11.3);\n" +
-                "bananaColumnValues.add(25.1);\n" +
-                "bananaColumnValues.add(32.7);\n" +
+                "List<HighChartsData> bananaColumnValues = new ArrayList<>();\n" +
+                "bananaColumnValues.add(new DoubleData(11.3));\n" +
+                "bananaColumnValues.add(new DoubleData(25.1));\n" +
+                "bananaColumnValues.add(new DoubleData(32.7));\n" +
                 "\n" +
                 "ColumnChartSeries bananaColumn = new ColumnChartSeries(\"Bananas\", bananaColumnValues);\n" +
                 "\n" +
-                "List<Object> sweetColumnValues = new ArrayList<Object>();\n" +
-                "sweetColumnValues.add(33.65);\n" +
-                "sweetColumnValues.add(63.24);\n" +
-                "sweetColumnValues.add(21.52);\n" +
+                "List<HighChartsData> sweetColumnValues = new ArrayList<>();\n" +
+                "sweetColumnValues.add(new DoubleData(33.65));\n" +
+                "sweetColumnValues.add(new DoubleData(63.24));\n" +
+                "sweetColumnValues.add(new DoubleData(21.52));\n" +
                 "\n" +
                 "ColumnChartSeries choclateColumn = new ColumnChartSeries(\"Choclate\", sweetColumnValues);\n" +
                 "\n" +
